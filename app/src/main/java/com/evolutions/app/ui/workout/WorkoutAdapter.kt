@@ -5,10 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.evolutions.app.data.ProgressManager
 import com.evolutions.app.data.models.WorkoutPlan
 import com.evolutions.app.databinding.ItemWorkoutBinding
 
-class WorkoutAdapter : ListAdapter<WorkoutPlan, WorkoutAdapter.WorkoutViewHolder>(WorkoutDiffCallback()) {
+class WorkoutAdapter(
+    private val onWorkoutCompleted: (() -> Unit)? = null
+) : ListAdapter<WorkoutPlan, WorkoutAdapter.WorkoutViewHolder>(WorkoutDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutViewHolder {
         val binding = ItemWorkoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -41,6 +44,26 @@ class WorkoutAdapter : ListAdapter<WorkoutPlan, WorkoutAdapter.WorkoutViewHolder
                 binding.textModificationNote.text = "⚠️ ${firstMod.modifications}"
             } else {
                 binding.textModificationNote.text = ""
+            }
+
+            // Completion state
+            updateCompletionUI(plan.id)
+
+            binding.buttonCompleteWorkout.setOnClickListener {
+                ProgressManager.toggleWorkoutCompleted(plan.id)
+                updateCompletionUI(plan.id)
+                onWorkoutCompleted?.invoke()
+            }
+        }
+
+        private fun updateCompletionUI(workoutId: Int) {
+            val isCompleted = ProgressManager.isWorkoutCompleted(workoutId)
+            if (isCompleted) {
+                binding.buttonCompleteWorkout.setImageResource(android.R.drawable.checkbox_on_background)
+                binding.root.alpha = 0.85f
+            } else {
+                binding.buttonCompleteWorkout.setImageResource(android.R.drawable.checkbox_off_background)
+                binding.root.alpha = 1.0f
             }
         }
     }

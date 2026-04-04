@@ -23,6 +23,7 @@
     <color name="category_fat">#F57C00</color>
     <color name="category_carb">#558B2F</color>
     <color name="category_avoid">#C62828</color>
+    <color name="category_knowledge">#1565C0</color>
 
     <!-- Item Backgrounds -->
     <color name="modification_bg">#FFF3E0</color>

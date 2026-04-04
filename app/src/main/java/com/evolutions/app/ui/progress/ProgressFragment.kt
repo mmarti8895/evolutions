@@ -1,13 +1,14 @@
 package com.evolutions.app.ui.progress
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.evolutions.app.data.ProgressManager
 import com.evolutions.app.databinding.FragmentProgressBinding
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ProgressFragment : Fragment() {
 
@@ -27,24 +28,43 @@ class ProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupClickListeners()
         observeViewModel()
     }
 
-    private fun setupClickListeners() {
-        binding.buttonLogWorkout.setOnClickListener {
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle("Log Workout Complete! 💪")
-                .setMessage("Amazing work! You showed up for yourself today. Your scores will update to reflect your progress.")
-                .setPositiveButton("Log It!") { _, _ ->
-                    viewModel.addWorkoutEntry()
-                }
-                .setNegativeButton("Not Yet", null)
-                .show()
-        }
+    override fun onResume() {
+        super.onResume()
+        viewModel.refreshProgress()
     }
 
     private fun observeViewModel() {
+        viewModel.evolutionGrade.observe(viewLifecycleOwner) { grade ->
+            binding.textEvolutionGrade.text = grade
+        }
+
+        viewModel.gradeColor.observe(viewLifecycleOwner) { color ->
+            try {
+                binding.textEvolutionGrade.setTextColor(Color.parseColor(color))
+            } catch (_: Exception) { }
+        }
+
+        viewModel.totalWorkouts.observe(viewLifecycleOwner) { total ->
+            binding.textTotalWorkouts.text = total.toString()
+
+            // Calculate workouts to next grade
+            val thresholds = listOf(9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117, 126, 135, 144, 153)
+            val nextThreshold = thresholds.firstOrNull { it > total }
+            binding.textGradeNext.text = if (nextThreshold != null) {
+                "${nextThreshold - total} workouts to next grade"
+            } else {
+                "MAX GRADE ACHIEVED! 🏆"
+            }
+        }
+
+        viewModel.fitnessScore.observe(viewLifecycleOwner) { score ->
+            binding.progressFitness.progress = score
+            binding.textFitnessScore.text = "$score / 100"
+        }
+
         viewModel.currentPhase.observe(viewLifecycleOwner) { phase ->
             val phaseName = when (phase) {
                 1 -> "Phase 1: Foundation"
@@ -63,25 +83,6 @@ class ProgressFragment : Fragment() {
 
         viewModel.currentWeek.observe(viewLifecycleOwner) { week ->
             binding.textCurrentWeek.text = "Week $week of Your Evolution"
-        }
-
-        viewModel.strengthScore.observe(viewLifecycleOwner) { score ->
-            binding.progressStrength.progress = score
-            binding.textStrengthScore.text = "$score / 100"
-        }
-
-        viewModel.staminaScore.observe(viewLifecycleOwner) { score ->
-            binding.progressStamina.progress = score
-            binding.textStaminaScore.text = "$score / 100"
-        }
-
-        viewModel.wellbeingScore.observe(viewLifecycleOwner) { score ->
-            binding.progressWellbeing.progress = score
-            binding.textWellbeingScore.text = "$score / 100"
-        }
-
-        viewModel.progressEntries.observe(viewLifecycleOwner) { entries ->
-            binding.textTotalWorkouts.text = (entries.lastOrNull()?.workoutsCompleted ?: 0).toString()
         }
 
         viewModel.milestones.observe(viewLifecycleOwner) { milestones ->

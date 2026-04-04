@@ -46,7 +46,7 @@ class HomeViewModel : ViewModel() {
         "💧 Stay hydrated! Aim for 8–10 glasses of water daily. Proper hydration supports joint health and reduces Crohn's inflammation.",
         "🍌 Bananas are your friend! Easy to digest, potassium-rich, and perfect pre-workout fuel for gentle energy.",
         "🍗 Well-cooked chicken breast is an excellent lean protein. Aim for 20–30g of protein within an hour after exercise.",
-        "🐟 Salmon twice a week provides omega-3 fatty acids that fight inflammation — great for arthritis and injury recovery.",
+        "🥩 Lean beef 2–3 times a week provides iron and B12 — important for energy and preventing anemia during hormone therapy.",
         "🍚 White rice is a Crohn's-friendly carb that's gentle on the gut. Pair it with protein for balanced recovery meals.",
         "🫚 A drizzle of olive oil adds healthy fats and anti-inflammatory compounds. Use it on cooked vegetables.",
         "🫚 Bone broth is rich in collagen and glycine — soothing for the gut lining and supportive for joint recovery."

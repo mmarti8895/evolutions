@@ -66,27 +66,27 @@ class NutritionViewModel : ViewModel() {
         ),
         NutritionItem(
             id = 3,
-            name = "Salmon (Baked or Steamed)",
+            name = "Turkey Breast (Ground or Sliced)",
             category = "Protein",
-            description = "Fatty fish rich in omega-3s — one of the most powerful natural anti-inflammatory foods available.",
-            benefits = "Omega-3 fatty acids (EPA/DHA) reduce joint inflammation for arthritis and injury recovery. Also supports estrogen metabolism. 25g protein per serving.",
-            crohnsFriendly = true,
-            lowFiber = true,
-            antiInflammatory = true,
-            servingSuggestion = "3–4 oz twice per week. Bake at 400°F with lemon and dill. Avoid heavy cream sauces.",
-            caloriesPerServing = 200
-        ),
-        NutritionItem(
-            id = 4,
-            name = "Canned Tuna in Water",
-            category = "Protein",
-            description = "Convenient, affordable lean protein that requires no cooking. Easy to keep on hand.",
-            benefits = "25g protein per can. Low fat, quick to absorb. Good post-workout protein when a full meal isn't possible.",
+            description = "Lean, versatile protein that's easy to digest and works well in many meal preparations.",
+            benefits = "High lean protein (29g per 3.5oz). Rich in tryptophan which supports serotonin production — helpful for mood and sleep. Low fat for Crohn's management.",
             crohnsFriendly = true,
             lowFiber = true,
             antiInflammatory = false,
-            servingSuggestion = "Mix 1 can with a small amount of mayo or olive oil. Eat with white crackers or white rice. Limit to 2–3 times per week due to mercury.",
-            caloriesPerServing = 130
+            servingSuggestion = "3–4 oz baked, grilled, or as lean ground turkey in stir-fry with white rice. Avoid processed deli turkey with nitrates.",
+            caloriesPerServing = 150
+        ),
+        NutritionItem(
+            id = 4,
+            name = "Lean Beef (90/10 Ground or Sirloin)",
+            category = "Protein",
+            description = "Iron-rich protein source important for maintaining energy and preventing anemia, especially relevant during hormone therapy.",
+            benefits = "High bioavailable iron and zinc. Complete protein with creatine for muscle recovery. B12 for energy metabolism.",
+            crohnsFriendly = true,
+            lowFiber = true,
+            antiInflammatory = false,
+            servingSuggestion = "3–4 oz lean sirloin or 90/10 ground beef, cooked well. Pair with white rice. Limit to 2–3 times per week. Avoid charring.",
+            caloriesPerServing = 180
         ),
         NutritionItem(
             id = 5,
@@ -216,14 +216,14 @@ class NutritionViewModel : ViewModel() {
         ),
         NutritionItem(
             id = 15,
-            name = "Omega-3 Fish Oil Supplement",
+            name = "Algae-Based Omega-3 Supplement",
             category = "Anti-Inflammatory",
-            description = "If dietary fish intake is insufficient, fish oil capsules provide concentrated EPA/DHA for consistent anti-inflammatory support.",
-            benefits = "Clinically proven to reduce joint stiffness and inflammation. Supports mood regulation and estrogen metabolism.",
+            description = "Plant-derived EPA/DHA from microalgae — the same omega-3s found in fish, sourced directly from where fish get theirs.",
+            benefits = "Clinically effective EPA/DHA without fish. Reduces joint stiffness and inflammation. Supports mood regulation and estrogen metabolism. No mercury risk.",
             crohnsFriendly = true,
             lowFiber = true,
             antiInflammatory = true,
-            servingSuggestion = "1000–2000mg EPA+DHA daily with food to avoid fishy burps. Consult your doctor as fish oil can interact with some medications.",
+            servingSuggestion = "1000–2000mg EPA+DHA daily with food. Algae oil capsules are odorless. Consult your doctor as omega-3s can interact with some medications.",
             caloriesPerServing = 10
         ),
 

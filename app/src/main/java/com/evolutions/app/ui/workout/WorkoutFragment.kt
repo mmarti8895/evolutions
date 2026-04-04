@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import android.widget.Toast
 import com.evolutions.app.databinding.FragmentWorkoutBinding
+import com.google.android.material.chip.Chip
 import com.google.android.material.tabs.TabLayout
 
 class WorkoutFragment : Fragment() {
@@ -30,11 +32,14 @@ class WorkoutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupTabs()
+        setupWeekChips()
         observeViewModel()
     }
 
     private fun setupRecyclerView() {
-        adapter = WorkoutAdapter()
+        adapter = WorkoutAdapter {
+            Toast.makeText(requireContext(), "Workout logged! 💪", Toast.LENGTH_SHORT).show()
+        }
         binding.recyclerViewWorkouts.adapter = adapter
     }
 
@@ -46,10 +51,35 @@ class WorkoutFragment : Fragment() {
                     1 -> viewModel.selectPhase(2)
                     2 -> viewModel.selectPhase(3)
                 }
+                updateWeekChipSelection(1)
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+    }
+
+    private fun setupWeekChips() {
+        binding.chipGroupWeeks.removeAllViews()
+        for (week in 1..8) {
+            val chip = Chip(requireContext()).apply {
+                text = "Week $week"
+                isCheckable = true
+                isChecked = week == 1
+                tag = week
+                setOnClickListener {
+                    viewModel.selectWeek(week)
+                    updateWeekChipSelection(week)
+                }
+            }
+            binding.chipGroupWeeks.addView(chip)
+        }
+    }
+
+    private fun updateWeekChipSelection(selectedWeek: Int) {
+        for (i in 0 until binding.chipGroupWeeks.childCount) {
+            val chip = binding.chipGroupWeeks.getChildAt(i) as? Chip
+            chip?.isChecked = (chip?.tag == selectedWeek)
+        }
     }
 
     private fun observeViewModel() {

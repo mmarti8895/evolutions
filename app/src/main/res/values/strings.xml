@@ -6,7 +6,12 @@
     <string name="nav_home">Home</string>
     <string name="nav_workouts">Workouts</string>
     <string name="nav_nutrition">Nutrition</string>
+    <string name="nav_learn">Learn</string>
     <string name="nav_progress">Progress</string>
+
+    <!-- Learn Fragment -->
+    <string name="learn_subtitle">Thai language with audio, knowledge &amp; growth</string>
+    <string name="play_pronunciation">Play pronunciation</string>
 
     <!-- Home Fragment -->
     <string name="welcome_title">Welcome to Your Evolution 💜</string>

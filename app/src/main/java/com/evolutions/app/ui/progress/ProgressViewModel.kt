@@ -3,9 +3,8 @@ package com.evolutions.app.ui.progress
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.evolutions.app.data.ProgressManager
 import com.evolutions.app.data.models.KnowledgeDomain
-import com.evolutions.app.data.models.ProgressEntry
-import java.util.Calendar
 
 class ProgressViewModel : ViewModel() {
 
@@ -15,17 +14,17 @@ class ProgressViewModel : ViewModel() {
     private val _currentWeek = MutableLiveData<Int>(1)
     val currentWeek: LiveData<Int> = _currentWeek
 
-    private val _strengthScore = MutableLiveData<Int>(5)
-    val strengthScore: LiveData<Int> = _strengthScore
+    private val _fitnessScore = MutableLiveData<Int>(0)
+    val fitnessScore: LiveData<Int> = _fitnessScore
 
-    private val _staminaScore = MutableLiveData<Int>(5)
-    val staminaScore: LiveData<Int> = _staminaScore
+    private val _evolutionGrade = MutableLiveData<String>("F-")
+    val evolutionGrade: LiveData<String> = _evolutionGrade
 
-    private val _wellbeingScore = MutableLiveData<Int>(10)
-    val wellbeingScore: LiveData<Int> = _wellbeingScore
+    private val _gradeColor = MutableLiveData<String>("#B00020")
+    val gradeColor: LiveData<String> = _gradeColor
 
-    private val _progressEntries = MutableLiveData<List<ProgressEntry>>()
-    val progressEntries: LiveData<List<ProgressEntry>> = _progressEntries
+    private val _totalWorkouts = MutableLiveData<Int>(0)
+    val totalWorkouts: LiveData<Int> = _totalWorkouts
 
     private val _milestones = MutableLiveData<List<Milestone>>()
     val milestones: LiveData<List<Milestone>> = _milestones
@@ -40,151 +39,104 @@ class ProgressViewModel : ViewModel() {
         val achieved: Boolean
     )
 
+    // Knowledge topic IDs by category
+    private val knowledgeIdsByCategory = mapOf(
+        "Cybersecurity" to listOf(1, 2, 3, 4),
+        "Exercise Science" to listOf(10, 11, 12),
+        "Nutrition" to listOf(20, 21, 22),
+        "Biology" to listOf(30, 31, 32),
+        "Mindfulness" to listOf(40, 41, 42)
+    )
+
+    // Thai word IDs by category
+    private val thaiIdsByCategory = mapOf(
+        "Greetings" to listOf(1, 2, 3, 4, 5, 6),
+        "Muay Thai" to listOf(10, 11, 12, 13, 14, 15, 16, 17, 18, 19),
+        "Numbers" to listOf(20, 21, 22, 23, 24, 25),
+        "Food" to listOf(30, 31, 32, 33, 34, 35),
+        "Essentials" to listOf(40, 41, 42, 43, 44),
+        "Polite" to listOf(50, 51, 52, 53)
+    )
+
     init {
-        loadInitialData()
+        refreshProgress()
     }
 
-    private fun loadInitialData() {
-        _progressEntries.value = listOf(
-            ProgressEntry(
-                id = 1,
-                date = Calendar.getInstance().timeInMillis,
-                weightLbs = 195f,
-                workoutsCompleted = 0,
-                strengthScore = 5,
-                staminaScore = 5,
-                wellbeingScore = 10,
-                notes = "Starting point. Feeling hopeful and ready to begin my evolution."
-            )
-        )
+    fun refreshProgress() {
+        val total = ProgressManager.getTotalWorkoutsLogged()
+        _totalWorkouts.value = total
+        _fitnessScore.value = ProgressManager.getFitnessScore()
+        _evolutionGrade.value = ProgressManager.getEvolutionGrade()
+        _gradeColor.value = ProgressManager.getGradeColor()
 
+        // Phase based on total workouts: 1-24 = Phase 1, 25-48 = Phase 2, 49+ = Phase 3
+        val phase = when {
+            total < 24 -> 1
+            total < 48 -> 2
+            else -> 3
+        }
+        _currentPhase.value = phase
+
+        // Week within phase (3 workouts per week)
+        val weekInPhase = (total % 24) / 3 + 1
+        _currentWeek.value = weekInPhase
+
+        updateMilestones(total)
+        updateKnowledgeDomains()
+    }
+
+    private fun updateMilestones(totalWorkouts: Int) {
         _milestones.value = listOf(
             Milestone("Starting Line 🌟", "You showed up. That's everything.", "🌟", true),
-            Milestone("First Workout Complete!", "You moved your body. That matters.", "💪", false),
-            Milestone("One Week Strong!", "7 days of intention and action.", "🔥", false),
-            Milestone("First 5 Workouts!", "Consistency is building.", "⭐", false),
-            Milestone("Two Weeks of Consistency!", "Your body is already adapting.", "🚀", false),
-            Milestone("First Month Champion!", "30 days of showing up for yourself.", "🏆", false),
-            Milestone("Phase 1 Complete!", "Foundation built. You're ready to build.", "🦋", false),
-            Milestone("Phase 2 Complete!", "You're stronger than when you started.", "💜", false)
-        )
-
-        _knowledgeDomains.value = listOf(
-            KnowledgeDomain(
-                id = 1,
-                name = "Cybersecurity & Zero Trust",
-                description = "Deepen expertise in your professional domain. Zero Trust, threat modeling, and beyond.",
-                icon = "🔐",
-                topics = listOf(
-                    "Zero Trust Architecture principles",
-                    "Identity and Access Management",
-                    "Threat modeling frameworks (STRIDE, PASTA)",
-                    "Security Operations Center workflows",
-                    "Cloud security fundamentals"
-                ),
-                dailyChallengeQuestion = "What is the difference between authentication and authorization, and why does Zero Trust require both at every access point?",
-                resourceLinks = listOf(
-                    "https://www.nist.gov/publications/zero-trust-architecture",
-                    "https://csrc.nist.gov/publications/detail/sp/800-207/final"
-                ),
-                progressPercent = 65
-            ),
-            KnowledgeDomain(
-                id = 2,
-                name = "Exercise Science & Physiology",
-                description = "Understand what's happening in your body during exercise, recovery, and adaptation.",
-                icon = "💪",
-                topics = listOf(
-                    "Muscle fiber types and how they adapt",
-                    "The science of DOMS (delayed onset muscle soreness)",
-                    "How cardiovascular fitness develops",
-                    "Hormones and exercise (estrogen, cortisol, growth hormone)",
-                    "Injury recovery and tissue remodeling"
-                ),
-                dailyChallengeQuestion = "Why do muscles get stronger during rest rather than during exercise? What cellular processes drive this adaptation?",
-                resourceLinks = listOf(
-                    "https://www.acsm.org/education-resources/",
-                    "https://www.ncbi.nlm.nih.gov/books/NBK279395/"
-                ),
-                progressPercent = 15
-            ),
-            KnowledgeDomain(
-                id = 3,
-                name = "Nutrition Science",
-                description = "Build evidence-based knowledge around food, inflammation, gut health, and recovery nutrition.",
-                icon = "🥗",
-                topics = listOf(
-                    "Macronutrient roles in muscle building",
-                    "Crohn's Disease and the gut-brain axis",
-                    "Anti-inflammatory diet patterns",
-                    "Micronutrient deficiencies common in IBD",
-                    "Protein timing for muscle protein synthesis"
-                ),
-                dailyChallengeQuestion = "What is the difference between soluble and insoluble fiber, and why is soluble fiber generally safer for Crohn's Disease management?",
-                resourceLinks = listOf(
-                    "https://www.crohnscolitisfoundation.org/diet-and-nutrition",
-                    "https://examine.com/supplements/omega-3-fatty-acids/"
-                ),
-                progressPercent = 20
-            ),
-            KnowledgeDomain(
-                id = 4,
-                name = "Mind-Body & Wellbeing",
-                description = "Explore the science of mental resilience, stress management, and the mind-body connection in health.",
-                icon = "🧘",
-                topics = listOf(
-                    "Neuroplasticity and habit formation",
-                    "The HPA axis and chronic stress",
-                    "Sleep's role in recovery and hormone regulation",
-                    "Mindfulness and pain perception",
-                    "Building self-compassion as a foundation"
-                ),
-                dailyChallengeQuestion = "What is neuroplasticity, and how does consistent positive behavior change literally reshape the brain over time?",
-                resourceLinks = listOf(
-                    "https://www.mindful.org/",
-                    "https://www.apa.org/topics/resilience"
-                ),
-                progressPercent = 30
-            ),
-            KnowledgeDomain(
-                id = 5,
-                name = "Transgender Health & Medicine",
-                description = "Knowledge about gender-affirming care, HRT effects on the body, and navigating healthcare as a trans woman.",
-                icon = "💜",
-                topics = listOf(
-                    "How estrogen therapy affects muscle, fat, and bones",
-                    "Cardiovascular considerations with HRT",
-                    "Exercise adaptations specific to trans women",
-                    "Navigating medical advocacy and finding affirming care",
-                    "Mental health resources and community connection"
-                ),
-                dailyChallengeQuestion = "How does estrogen therapy affect bone density, and why is weight-bearing exercise particularly important for trans women on HRT?",
-                resourceLinks = listOf(
-                    "https://transcare.ucsf.edu/guidelines",
-                    "https://www.outcarehealth.org/"
-                ),
-                progressPercent = 40
-            )
+            Milestone("First Workout Complete!", "You moved your body. That matters.", "💪", totalWorkouts >= 1),
+            Milestone("One Week Strong!", "3 workouts of intention and action.", "🔥", totalWorkouts >= 3),
+            Milestone("First 5 Workouts!", "Consistency is building.", "⭐", totalWorkouts >= 5),
+            Milestone("Two Weeks Strong!", "Your body is already adapting.", "🚀", totalWorkouts >= 6),
+            Milestone("First Month Champion!", "12 workouts — a month of showing up!", "🏆", totalWorkouts >= 12),
+            Milestone("Phase 1 Complete!", "Foundation built. You're ready to build.", "🦋", totalWorkouts >= 24),
+            Milestone("Phase 2 Complete!", "You're stronger than when you started.", "💜", totalWorkouts >= 48)
         )
     }
 
-    fun addWorkoutEntry(notes: String = "") {
-        val current = _progressEntries.value?.toMutableList() ?: mutableListOf()
-        val lastEntry = current.lastOrNull()
-        val newEntry = ProgressEntry(
-            id = current.size + 1,
-            date = Calendar.getInstance().timeInMillis,
-            weightLbs = lastEntry?.weightLbs ?: 195f,
-            workoutsCompleted = (lastEntry?.workoutsCompleted ?: 0) + 1,
-            strengthScore = minOf(100, (_strengthScore.value ?: 5) + 2),
-            staminaScore = minOf(100, (_staminaScore.value ?: 5) + 2),
-            wellbeingScore = minOf(100, (_wellbeingScore.value ?: 10) + 1),
-            notes = notes.ifEmpty { "Workout completed!" }
+    private fun updateKnowledgeDomains() {
+        val completedKnowledge = ProgressManager.getCompletedKnowledgeIds()
+        val completedThai = ProgressManager.getCompletedThaiIds()
+
+        val totalThaiIds = thaiIdsByCategory.values.flatten()
+        val thaiCompleted = totalThaiIds.count { it in completedThai }
+        val thaiPercent = if (totalThaiIds.isNotEmpty()) (thaiCompleted * 100) / totalThaiIds.size else 0
+
+        _knowledgeDomains.value = listOf(
+            buildDomain(1, "Thai Language", "🇹🇭", thaiPercent),
+            buildDomain(2, "Cybersecurity & Zero Trust", "🔐",
+                calcKnowledgePercent("Cybersecurity", completedKnowledge)),
+            buildDomain(3, "Exercise Science & Physiology", "💪",
+                calcKnowledgePercent("Exercise Science", completedKnowledge)),
+            buildDomain(4, "Nutrition Science", "🥗",
+                calcKnowledgePercent("Nutrition", completedKnowledge)),
+            buildDomain(5, "Biology", "🧬",
+                calcKnowledgePercent("Biology", completedKnowledge)),
+            buildDomain(6, "Mindfulness & Wellbeing", "🧘",
+                calcKnowledgePercent("Mindfulness", completedKnowledge))
         )
-        current.add(newEntry)
-        _progressEntries.value = current
-        _strengthScore.value = newEntry.strengthScore
-        _staminaScore.value = newEntry.staminaScore
-        _wellbeingScore.value = newEntry.wellbeingScore
+    }
+
+    private fun calcKnowledgePercent(category: String, completedIds: Set<Int>): Int {
+        val ids = knowledgeIdsByCategory[category] ?: return 0
+        val completed = ids.count { it in completedIds }
+        return if (ids.isNotEmpty()) (completed * 100) / ids.size else 0
+    }
+
+    private fun buildDomain(id: Int, name: String, icon: String, percent: Int): KnowledgeDomain {
+        return KnowledgeDomain(
+            id = id,
+            name = name,
+            description = "",
+            icon = icon,
+            topics = emptyList(),
+            dailyChallengeQuestion = "",
+            resourceLinks = emptyList(),
+            progressPercent = percent
+        )
     }
 }
