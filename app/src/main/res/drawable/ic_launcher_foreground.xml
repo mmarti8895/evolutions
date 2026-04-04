@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Butterfly / evolution symbol in white -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,20 C54,20 35,30 30,45 C25,60 35,70 54,70 C73,70 83,60 78,45 C73,30 54,20 54,20Z" />
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M54,70 L54,88 M48,80 L60,80"
+        android:strokeColor="#FFB300"
+        android:strokeWidth="3" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,38 C54,38 42,42 40,50 C38,58 44,64 54,64 C64,64 70,58 68,50 C66,42 54,38 54,38Z"
+        android:fillAlpha="0.6" />
+</vector>
