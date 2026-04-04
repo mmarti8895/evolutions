@@ -201,6 +201,147 @@ If you want to share the app with someone without them needing a development env
 
 ---
 
+## Developing with VS Code (Alternative to Android Studio)
+
+Android Studio is **not required**. You can use **Visual Studio Code** as your editor. VS Code won't give you a visual XML layout editor or a one-click emulator launcher, but everything needed to write code, build, and deploy to a real device (or a command-line emulator) works perfectly.
+
+### What VS Code can and cannot do for Android development
+
+| Capability | Android Studio | VS Code |
+|---|---|---|
+| Kotlin syntax highlighting & code completion | ✅ Full IntelliJ engine | ✅ Via extension (good, not identical) |
+| Gradle build / run tasks | ✅ Built-in | ✅ Via Gradle extension or terminal |
+| Deploy to physical device | ✅ One-click | ✅ `./gradlew installDebug` in terminal |
+| Visual XML layout editor | ✅ | ❌ Not available |
+| AVD (emulator) manager UI | ✅ Built-in | ❌ Use `avdmanager` CLI (see below) |
+| Logcat viewer | ✅ Built-in | ⚠️ Via `adb logcat` in terminal or extension |
+| Android SDK bundled | ✅ | ❌ Must install separately |
+
+---
+
+### Step 1 — Install the Android SDK (standalone, without Android Studio)
+
+Because VS Code does not bundle the Android SDK, you need to install it manually.
+
+1. Go to [developer.android.com/studio#command-tools](https://developer.android.com/studio#command-tools) and download the **Command-line tools only** package for your OS.
+2. Unzip the download. Move the contents to a permanent location — for example:
+   - **macOS/Linux:** `~/android-sdk/cmdline-tools/latest/`
+   - **Windows:** `C:\android-sdk\cmdline-tools\latest\`
+3. Set environment variables (add these to your shell profile — `~/.zshrc`, `~/.bashrc`, or Windows System Environment Variables):
+   ```bash
+   export ANDROID_HOME=$HOME/android-sdk
+   export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+   export PATH=$PATH:$ANDROID_HOME/platform-tools
+   export PATH=$PATH:$ANDROID_HOME/emulator
+   ```
+4. Reload your shell (`source ~/.zshrc` etc.) and then install the required SDK components:
+   ```bash
+   sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0" "emulator"
+   sdkmanager --licenses   # accept all licenses
+   ```
+
+Verify ADB is available:
+```bash
+adb version
+```
+
+---
+
+### Step 2 — Install VS Code extensions
+
+Open VS Code, press `Ctrl+Shift+X` (or `Cmd+Shift+X` on macOS) to open the Extensions panel, and install:
+
+| Extension | Publisher | Purpose |
+|---|---|---|
+| **Kotlin** | fwcd | Syntax highlighting, code navigation, basic IntelliSense for Kotlin |
+| **Extension Pack for Java** | Microsoft | Java language server required by the Kotlin extension |
+| **Gradle for Java** | Microsoft | Run Gradle tasks from the sidebar without typing commands |
+
+> **Optional but useful:**
+> - **Android iOS Emulator** (DiemasMichiels) — launch AVDs from the VS Code status bar
+> - **Todo Tree** — highlights TODO/FIXME comments across the codebase
+
+---
+
+### Step 3 — Open and build the project
+
+```bash
+# Clone (if you haven't already)
+git clone https://github.com/mmarti8895/evolutions.git
+cd evolutions
+
+# macOS/Linux — make Gradle wrapper executable
+chmod +x gradlew
+
+# Open in VS Code
+code .
+```
+
+Once VS Code opens, the **Gradle for Java** extension will detect the project automatically. You can either:
+
+- Use the **Gradle sidebar** (elephant icon on the left): expand `evolutions → app → build → Tasks → build`, then double-click **assembleDebug**
+- Or run it directly in the **VS Code integrated terminal** (`Ctrl+\`` to open):
+  ```bash
+  ./gradlew assembleDebug          # macOS / Linux
+  .\gradlew.bat assembleDebug      # Windows
+  ```
+
+The debug APK is output to `app/build/outputs/apk/debug/app-debug.apk`.
+
+---
+
+### Step 4 — Deploy to a physical Android device from VS Code
+
+Enable USB debugging on your phone (see [Option A — USB Cable](#option-a--usb-cable-recommended-for-first-install) above), then from the VS Code integrated terminal:
+
+```bash
+# Build and install in one step
+./gradlew installDebug
+
+# — OR — install an already-built APK
+adb install app/build/outputs/apk/debug/app-debug.apk
+
+# Stream logs while the app is running
+adb logcat -s "Evolutions"
+```
+
+---
+
+### Step 5 — Run on an emulator from VS Code (command-line AVD)
+
+Since VS Code has no built-in AVD manager, create and start virtual devices using the command-line tools installed in Step 1.
+
+#### Create a virtual device (one-time setup)
+```bash
+# List available system images
+sdkmanager --list | grep "system-images;android-34"
+
+# Download a system image (Google APIs x86_64 is fastest on modern hardware)
+sdkmanager "system-images;android-34;google_apis;x86_64"
+
+# Create an AVD named "Pixel7"
+avdmanager create avd -n Pixel7 -k "system-images;android-34;google_apis;x86_64" -d "pixel_7"
+```
+
+#### Start the emulator
+```bash
+emulator -avd Pixel7
+```
+
+Leave that terminal running. In a second terminal, deploy the app:
+```bash
+./gradlew installDebug
+```
+
+The app will install and appear in the emulator's app drawer.
+
+#### List existing AVDs
+```bash
+avdmanager list avd
+```
+
+---
+
 ## Troubleshooting
 
 | Problem | Fix |
@@ -211,6 +352,11 @@ If you want to share the app with someone without them needing a development env
 | Gradle sync fails on first open | Check your internet connection — Gradle downloads ~500 MB of Android SDK dependencies on the first build |
 | App not installing: INSTALL_FAILED_UPDATE_INCOMPATIBLE | Uninstall any previous version of the app on the device first |
 | `chmod +x gradlew` fails on Windows | Use `.\gradlew.bat` instead of `./gradlew` |
+| VS Code: Kotlin extension shows no IntelliSense | Ensure **Extension Pack for Java** is also installed; reload VS Code after install |
+| VS Code: Gradle tasks panel is empty | Open the project folder directly (`code .` from the repo root), not a parent folder |
+| `sdkmanager: command not found` | Confirm `$ANDROID_HOME/cmdline-tools/latest/bin` is on your `PATH` and the tools were unzipped to the `latest/` subfolder |
+| Emulator won't start (HAXM/WHPX error on Windows) | Enable hardware virtualization in your BIOS, or use an ARM system image instead of x86_64 |
+| `emulator: command not found` | Add `$ANDROID_HOME/emulator` to your `PATH` |
 
 ---
 
