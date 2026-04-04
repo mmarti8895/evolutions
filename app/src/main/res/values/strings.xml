@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Evolutions</string>
+
+    <!-- Navigation Labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_workouts">Workouts</string>
+    <string name="nav_nutrition">Nutrition</string>
+    <string name="nav_learn">Learn</string>
+    <string name="nav_progress">Progress</string>
+
+    <!-- Learn Fragment -->
+    <string name="learn_subtitle">Thai language with audio, knowledge &amp; growth</string>
+    <string name="play_pronunciation">Play pronunciation</string>
+
+    <!-- Home Fragment -->
+    <string name="welcome_title">Welcome to Your Evolution 💜</string>
+
+    <!-- Section Headers -->
+    <string name="section_today_workout">TODAY\'S WORKOUT</string>
+    <string name="section_nutrition_tip">DAILY NUTRITION TIP</string>
+    <string name="section_knowledge_challenge">DAILY KNOWLEDGE CHALLENGE</string>
+    <string name="section_your_evolution">YOUR EVOLUTION JOURNEY</string>
+    <string name="section_fitness_scores">FITNESS SCORES</string>
+    <string name="section_total_workouts">TOTAL WORKOUTS</string>
+    <string name="section_milestones">MILESTONES &amp; ACHIEVEMENTS 🏆</string>
+    <string name="section_knowledge_domains">KNOWLEDGE DOMAINS 🧠</string>
+
+    <!-- Quick Stats Labels -->
+    <string name="stats_current_week">Current Week</string>
+    <string name="stats_workouts">Workouts</string>
+    <string name="stats_streak">Streak</string>
+
+    <!-- Workout Fragment -->
+    <string name="workout_subtitle">All exercises respect your injury profile</string>
+    <string name="phase_1_tab">Phase 1\nFoundation</string>
+    <string name="phase_2_tab">Phase 2\nBuilding</string>
+    <string name="phase_3_tab">Phase 3\nAdvancing</string>
+    <string name="phase_1_label">Foundation</string>
+    <string name="phase_2_label">Building</string>
+    <string name="phase_3_label">Advancing</string>
+
+    <!-- Nutrition Fragment -->
+    <string name="nutrition_subtitle">Crohn\'s-friendly, anti-inflammatory, recovery-focused</string>
+
+    <!-- Progress Fragment -->
+    <string name="score_strength">Strength</string>
+    <string name="score_stamina">Stamina</string>
+    <string name="score_wellbeing">Wellbeing</string>
+    <string name="button_log_workout">Log Workout ✅</string>
+
+    <!-- Motivational Messages (7 rotating) -->
+    <string name="motivation_1">Every single step forward is a victory. You are rewriting your story, one workout at a time. 💜</string>
+    <string name="motivation_2">Seven years away doesn\'t define you — coming back defines you. Welcome to your evolution. ✨</string>
+    <string name="motivation_3">Your body is remarkable. It has healed, adapted, and is ready to grow stronger with you. 🌱</string>
+    <string name="motivation_4">Progress is not linear, and that\'s perfectly okay. Celebrate every moment of movement. 🎉</string>
+    <string name="motivation_5">You are not starting over — you are starting from experience, wisdom, and incredible strength. 💪</string>
+    <string name="motivation_6">Small steps taken consistently build mountains. Today\'s workout matters more than you know. 🏔️</string>
+    <string name="motivation_7">Your journey is uniquely yours. Honor your body, respect your limits, and celebrate your courage. 🦋</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_home_icon">Home navigation icon</string>
+    <string name="cd_workout_icon">Workouts navigation icon</string>
+    <string name="cd_nutrition_icon">Nutrition navigation icon</string>
+    <string name="cd_progress_icon">Progress navigation icon</string>
+</resources>

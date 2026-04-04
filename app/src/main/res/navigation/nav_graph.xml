@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.evolutions.app.ui.home.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.evolutions.app.ui.workout.WorkoutFragment"
+        android:label="@string/nav_workouts"
+        tools:layout="@layout/fragment_workout" />
+
+    <fragment
+        android:id="@+id/nutritionFragment"
+        android:name="com.evolutions.app.ui.nutrition.NutritionFragment"
+        android:label="@string/nav_nutrition"
+        tools:layout="@layout/fragment_nutrition" />
+
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.evolutions.app.ui.learn.LearnFragment"
+        android:label="@string/nav_learn"
+        tools:layout="@layout/fragment_learn" />
+
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.evolutions.app.ui.progress.ProgressFragment"
+        android:label="@string/nav_progress"
+        tools:layout="@layout/fragment_progress" />
+
+</navigation>
