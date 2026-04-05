@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.evolutions.app-mergeDebugResources-47:/values-ko/values-ko.xml",
+            "outputFile": "com.evolutions.app-mergeDebugResources-48:/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mmart\\.gradle\\caches\\transforms-3\\2ae44559fb622f82f68fb88c274b950a\\transformed\\navigation-ui-2.7.6\\res\\values-ko\\values-ko.xml",

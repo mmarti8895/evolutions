@@ -32,7 +32,9 @@ class VideoAdapter : ListAdapter<ThaiVideo, VideoAdapter.VideoViewHolder>(VideoD
             binding.root.setOnClickListener {
                 val query = Uri.encode("${item.title} Thai")
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=$query"))
-                it.context.startActivity(intent)
+                if (intent.resolveActivity(it.context.packageManager) != null) {
+                    it.context.startActivity(intent)
+                }
             }
         }
     }

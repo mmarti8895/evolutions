@@ -1,58 +1,58 @@
 [
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_thai_word.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_thai_word.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/fragment_home.xml",
+        "source": "com.evolutions.app-main-52:/layout/fragment_home.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/fragment_progress.xml",
-        "source": "com.evolutions.app-main-51:/layout/fragment_progress.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/fragment_learn.xml",
+        "source": "com.evolutions.app-main-52:/layout/fragment_learn.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/fragment_learn.xml",
-        "source": "com.evolutions.app-main-51:/layout/fragment_learn.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/fragment_progress.xml",
+        "source": "com.evolutions.app-main-52:/layout/fragment_progress.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_lesson.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_lesson.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_knowledge.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_knowledge.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/fragment_nutrition.xml",
-        "source": "com.evolutions.app-main-51:/layout/fragment_nutrition.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_script.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_script.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_workout.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_workout.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_book.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_book.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/activity_main.xml",
-        "source": "com.evolutions.app-main-51:/layout/activity_main.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_thai_word.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_thai_word.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_video.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_video.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/fragment_nutrition.xml",
+        "source": "com.evolutions.app-main-52:/layout/fragment_nutrition.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_nutrition.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_nutrition.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/fragment_workout.xml",
+        "source": "com.evolutions.app-main-52:/layout/fragment_workout.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/fragment_home.xml",
-        "source": "com.evolutions.app-main-51:/layout/fragment_home.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_video.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_video.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/fragment_workout.xml",
-        "source": "com.evolutions.app-main-51:/layout/fragment_workout.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_workout.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_workout.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_book.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_book.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/activity_main.xml",
+        "source": "com.evolutions.app-main-52:/layout/activity_main.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_script.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_script.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_lesson.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_lesson.xml"
     },
     {
-        "merged": "com.evolutions.app-mergeDebugResources-48:/layout/item_knowledge.xml",
-        "source": "com.evolutions.app-main-51:/layout/item_knowledge.xml"
+        "merged": "com.evolutions.app-mergeDebugResources-49:/layout/item_nutrition.xml",
+        "source": "com.evolutions.app-main-52:/layout/item_nutrition.xml"
     }
 ]

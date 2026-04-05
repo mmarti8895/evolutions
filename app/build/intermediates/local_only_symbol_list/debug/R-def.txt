@@ -183,3 +183,4 @@ string welcome_title
 string workout_subtitle
 style Theme.Evolutions
 style Theme.Evolutions.Starting
+xml network_security_config
