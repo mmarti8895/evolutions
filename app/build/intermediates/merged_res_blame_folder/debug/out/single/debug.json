@@ -1,19 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_bottom_nav_selector.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\bottom_nav_selector.xml"
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_bottom_nav_selector.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\bottom_nav_selector.xml"
     },
     {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\menu_bottom_nav_menu.xml.flat",
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_knowledge.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_knowledge.xml"
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-hdpi/ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_book.xml.flat",
@@ -24,12 +24,84 @@
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_lesson.xml.flat",
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_lesson.xml"
     },
     {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_modification_background.xml.flat",
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\modification_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_chip_background.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\chip_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_thai_word.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_thai_word.xml"
+    },
+    {
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_workout.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_workout.xml"
+    },
+    {
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_knowledge.xml.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_knowledge.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_nutrition.xml.flat",
@@ -48,20 +120,16 @@
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\ic_progress.xml"
     },
     {
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_fragment_workout.xml.flat",
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\fragment_workout.xml"
     },
     {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_chip_background.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\chip_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_thai_word.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_thai_word.xml"
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_ic_learn.xml.flat",
@@ -76,6 +144,14 @@
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\navigation\\nav_graph.xml"
     },
     {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_fragment_nutrition.xml.flat",
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\fragment_nutrition.xml"
     },
@@ -88,20 +164,16 @@
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\fragment_learn.xml"
     },
     {
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_script.xml.flat",
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_script.xml"
     },
     {
-        "merged": "com.evolutions.app-merged_res-49:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.evolutions.app-main-51:/drawable/ic_launcher_foreground.xml"
-    },
-    {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_ic_home.xml.flat",
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\ic_home.xml"
-    },
-    {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\drawable_ic_nutrition.xml.flat",
@@ -112,7 +184,11 @@
         "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\drawable\\ic_fitness.xml"
     },
     {
-        "merged": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-merged_res-49:\\layout_item_workout.xml.flat",
-        "source": "C:\\Users\\mmart\\.gradle\\daemon\\8.2\\com.evolutions.app-main-51:\\layout\\item_workout.xml"
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.evolutions.app-merged_res-49:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.evolutions.app-main-51:/mipmap-mdpi/ic_launcher.png"
     }
 ]
