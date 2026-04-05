@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.evolutions.app-mergeDebugResources-47:/values-v23/values-v23.xml",
+            "outputFile": "com.evolutions.app-mergeDebugResources-48:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mmart\\.gradle\\caches\\transforms-3\\22e26384dd04e6d50684989214aa0c1b\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",

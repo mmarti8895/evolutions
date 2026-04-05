@@ -4771,6 +4771,7 @@ com.evolutions.app:attr/floatingActionButtonSmallSecondaryStyle = 0x7f0301ef
 com.evolutions.app:id/material_timepicker_ok_button = 0x7f080118
 com.evolutions.app:dimen/mtrl_btn_icon_btn_padding_left = 0x7f06025a
 com.evolutions.app:color/m3_navigation_item_text_color = 0x7f0500a1
+com.evolutions.app:xml/network_security_config = 0x7f140000
 com.evolutions.app:styleable/Fragment = 0x7f13003d
 com.evolutions.app:attr/limitBoundsTo = 0x7f0302c6
 com.evolutions.app:attr/actionModeCloseContentDescription = 0x7f030015

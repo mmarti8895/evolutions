@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.evolutions.app-mergeDebugResources-47:/values/values.xml",
+            "outputFile": "com.evolutions.app-mergeDebugResources-48:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mmart\\.gradle\\caches\\transforms-3\\0095671cf0de38f4511901b8a19cba12\\transformed\\startup-runtime-1.1.1\\res\\values\\values.xml",
