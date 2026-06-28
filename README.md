@@ -16,7 +16,7 @@ Every workout, nutrition recommendation, and progression plan is tailored to the
 
 This project was bootstrapped with the help of AI code generation tools. The AI assisted in generating boilerplate code, suggesting architecture patterns, and providing code snippets for common Android development tasks. All AI-generated code was reviewed and modified by the developer to ensure it met the specific requirements of the project. Changes should be validated with software composition analysis (SCA), code review, and testing to help maintain the quality and security of the application.
 
-Please, submit any issues or pull requests if you find bugs, security vulnerabilities, or areas for improvement. Your contributions are welcome and appreciated.
+Please submit any issues or pull requests if you find bugs, security vulnerabilities, or areas for improvement. Your contributions are welcome and appreciated.
 
 ## Features
 
